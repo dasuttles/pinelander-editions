@@ -1,39 +1,117 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pinelander Editions</title>
   <style>
-    body {
-      font-family: Georgia, serif;
-      background: #fdfcf9;
-      color: #222;
-      text-align: center;
-      padding: 2em;
+    :root {
+      --paper: #fdfcf9;
+      --ink: #222;
+      --muted: #5f554a;
+      --rule: #d8cfc1;
+      --accent: #3f4f2f;
+      --accent-dark: #27321d;
+      --card: #fffaf0;
     }
-    img.logo {
-      max-width: 200px;
-      margin-bottom: 1em;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.3em;
-    }
-    p {
-      max-width: 600px;
-      margin: 1em auto;
-      font-size: 1.1em;
-    }
-    .email {
-      margin-top: 2em;
-      font-size: 1em;
-    }
+
+```
+body {
+  font-family: Georgia, serif;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: center;
+  padding: 2em;
+  line-height: 1.55;
+}
+
+img.logo {
+  max-width: 200px;
+  margin-bottom: 1em;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+}
+
+h2 {
+  margin-top: 2em;
+}
+
+p {
+  max-width: 700px;
+  margin: 1em auto;
+  font-size: 1.1em;
+}
+
+.email {
+  margin-top: 2em;
+  font-size: 1em;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
+
+.about,
+.books {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25em;
+  margin-top: 1.5em;
+  text-align: left;
+}
+
+.book-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.25em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.book-card h3 {
+  margin: 0 0 0.5em;
+  font-size: 1.15em;
+  line-height: 1.3;
+}
+
+.book-card p {
+  max-width: none;
+  margin: 0.4em 0;
+  font-size: 1em;
+}
+
+.book-meta {
+  color: var(--muted);
+}
+
+.book-link {
+  display: inline-block;
+  margin-top: 0.75em;
+  padding: 0.55em 0.85em;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.95em;
+}
+
+.book-link:hover,
+.book-link:focus {
+  background: var(--accent-dark);
+}
+```
+
   </style>
 </head>
 <body>
@@ -43,22 +121,71 @@ ul {
      Carefully typeset, beautifully preserved for Kindle and beyond.</p>
   <p class="email">📬 <a href="mailto:pinelander-editions@protonmail.com">pinelander-editions@protonmail.com</a></p>
 
+  <section class="books" aria-labelledby="available-books">
+    <h2 id="available-books">Available Books</h2>
+    <p>Current Pinelander Editions titles available through Amazon Kindle.</p>
+
+```
+<div class="book-list">
+  <!-- Add new books by copying one <article class="book-card"> block and updating the title, author, price, and link. -->
+
+  <article class="book-card">
+    <h3>The life and curious adventures of Peter Williamson, who was carried off from Aberdeen, and sold for a slave</h3>
+    <p class="book-meta">By Peter Williamson</p>
+    <p><strong>Kindle price:</strong> $2.99</p>
+    <a class="book-link" href="https://www.amazon.com/dp/B0F7M4DWVT" target="_blank" rel="noopener">View on Amazon</a>
+  </article>
+
+  <article class="book-card">
+    <h3>Indian Creek Massacre and Sylvia and Rachel Hall as Indian Captives Black Hawk War, 1832</h3>
+    <p class="book-meta">By Charles M. Scanlan</p>
+    <p><strong>Kindle price:</strong> $2.99</p>
+    <a class="book-link" href="https://www.amazon.com/gp/product/B0DPMCPLM8?ref_=dbs_m_mng_rwt_calw_tkin_0&amp;storeType=ebooks" target="_blank" rel="noopener">View on Amazon</a>
+  </article>
+
+  <article class="book-card">
+    <h3>Narrative of the Capture and Providential Escape of Misses Frances and Almira Hall</h3>
+    <p class="book-meta">By William P. Edwards</p>
+    <p><strong>Kindle price:</strong> $1.99</p>
+    <a class="book-link" href="https://www.amazon.com/Narrative-Capture-Providential-Escape-Frances-ebook/dp/B0F88GFXKG" target="_blank" rel="noopener">View on Amazon</a>
+  </article>
+
+  <article class="book-card">
+    <h3>Narrative of the Captivity Of Juan Ortiz Among The Indians Of Florida</h3>
+    <p class="book-meta">By Wilmer Lambert A.</p>
+    <p><strong>Kindle price:</strong> $2.99</p>
+    <a class="book-link" href="https://www.amazon.com/Narrative-Captivity-Ortiz-Indians-Florida-ebook/dp/B0G4NN6FWS" target="_blank" rel="noopener">View on Amazon</a>
+  </article>
+
+  <article class="book-card">
+    <h3>An Account of the Indian Captivity of Mrs. Jennie Wiley</h3>
+    <p class="book-meta">By William Elsey Connelley</p>
+    <p><strong>Kindle price:</strong> $2.99</p>
+    <a class="book-link" href="https://www.amazon.com/dp/B0H6VVCRZQ" target="_blank" rel="noopener">View on Amazon</a>
+  </article>
+</div>
+```
+
+  </section>
+
   <section class="about">
     <h2>About Pinelander Editions</h2>
-    <p><strong>Pinelander Editions</strong> produces accessible digital editions of 18th & 19th-century American survival and
+    <p><strong>Pinelander Editions</strong> produces accessible digital editions of 18th &amp; 19th-century American survival and
       captivity narratives. Many of these texts are available only as image scans or unstructured files, limiting their
       readability and accessibility.</p>
 
-    <ul>
-      <li>Fully searchable and compatible with modern e-readers</li>
-      <li>Edited to correct OCR errors and restore clear formatting</li>
-      <li>Styled with clean, readable typography</li>
-      <li>Designed to reflect the original structure and layout of the print edition</li>
-      <li>Packaged with custom covers and embedded metadata</li>
-    </ul>
+```
+<ul>
+  <li>Fully searchable and compatible with modern e-readers</li>
+  <li>Edited to correct OCR errors and restore clear formatting</li>
+  <li>Styled with clean, readable typography</li>
+  <li>Designed to reflect the original structure and layout of the print edition</li>
+  <li>Packaged with custom covers and embedded metadata</li>
+</ul>
 
-    <p>Each book is prepared with attention to historical integrity and digital usability.</p>
+<p>Each book is prepared with attention to historical integrity and digital usability.</p>
+```
+
   </section>
 </body>
 </html>
-
